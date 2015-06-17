@@ -1,20 +1,61 @@
 // Checkbox
+@checkMarkColor: #777;
+@checkMarkWidth: 2px;
+@checkMarkTransitionTime: .2s;
 
-.cb-ctr:hover {
-  cursor: pointer;
+.cb-ctr {
+  &.checked {
+    .cmark-left {
+      height: 25%;
+    }
 
-  .cb {
-    opacity: .8;
-    .box-shadow( inset 0 1px 1px #eee );
+    .cmark-right {
+      width: 85%;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    .cb {
+      opacity: 1;
+      .box-shadow( inset 0 1px 1px #eee );
+    }
   }
 }
 
 .cb {
   border: 1px solid #999;
   height: 14px;
-  opacity: .5;
+  opacity: .8;
   width: 14px;
-  .transition( box-shadow )
+  .transition( box-shadow );
+}
+
+.cmark {
+  height: 100%;
+  left: 3px;
+  position: relative;
+  top: 1px;
+  width: 100%;
+  .rotate(310deg);
+}
+
+.cmark-left,
+.cmark-right {
+  background-color: @checkMarkColor;
+}
+
+.cmark-left {
+  height: 0;
+  width: @checkMarkWidth;
+  .transition(height @checkMarkTransitionTime);
+}
+
+.cmark-right {
+  height: @checkMarkWidth;
+  width: 0;
+  .transition(width @checkMarkTransitionTime);
 }
 
 .cb,

@@ -1,0 +1,23 @@
+<div class="item-img-ctr">
+    <img src="<%= image %>"/>
+    <div class="img-overlay"></div>
+</div>
+
+<div class="item-info">
+    <div class="item-info-row">
+        <div class="item-name item-info-label"><%= label %></div>
+        <div class="item-desc"><%= desc %></div>
+    </div>
+
+    <div class="item-info-row">
+        <div class="item-info-label">sizes</div>
+        <div class="item-size-info"><%= sizes.join( ', ' ) %></div>
+    </div>
+
+    <div class="item-info-row">
+        <div class="item-info-label">colors</div>
+        <% _.forEach( colors, function ( color ) { %>
+        <div class="color-selector" style="background-color: <%= color %>;"></div>
+        <% } ) %>
+    </div>
+</div>
