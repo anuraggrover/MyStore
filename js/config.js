@@ -7,7 +7,11 @@ requirejs.config( {
         'underscore':   '../libs/js/lodash',
         'jquery':   '../libs/js/jquery-2.1.4',
         'bootstrap': '../libs/js/bootstrap',
-        'backbone':  '../libs/js/backbone'
+        'backbone':  '../libs/js/backbone',
+        'models':    'models',
+        'views':     'views',
+        'text':      '../libs/js/require/text',
+        'templates': '../templates'
     },
 
     shim: {

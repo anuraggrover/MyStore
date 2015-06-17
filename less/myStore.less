@@ -1,0 +1,72 @@
+@import "libs/bootstrap/bootstrap";
+@import "components";
+
+@workspaceBorderColor: #e1e0e0;
+@leftAreaPadding: 35px;
+
+body {
+  color: #555;
+  font-family: "Open Sans", sans-serif;
+}
+
+#ms-top-nav {
+  padding: @leftAreaPadding;
+}
+
+.ms-container {
+  height: 800px;
+  padding: 0;
+  width: 100%;
+}
+
+#ms-sidebar {
+  border: solid @workspaceBorderColor;
+  border-width: 1px 1px 0 0;
+  height: 100%;
+  padding: @leftAreaPadding;
+}
+
+#ms-workspace {
+  border: solid @workspaceBorderColor;
+  border-width: 1px 0 0 0;
+  height: 100%;
+}
+
+.menu-item {
+  font-size: @font-size-base;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.tn-item {
+  display: inline-block;
+  margin-right: 30px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.sb-item-label {
+  margin-bottom: 10px;
+}
+
+.c-i-empty-info {
+  display: none;
+}
+
+.cart-items.empty .c-i-empty-info {
+  display: block;
+}
+
+.facets-ctr {
+  margin-top: 20px;
+}
+
+.facet-label {
+  margin-bottom: 10px;
+}
+
+.facet-value {
+  margin-top: 10px;
+}

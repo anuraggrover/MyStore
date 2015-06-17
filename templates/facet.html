@@ -1,0 +1,10 @@
+<div class="sb-item-label menu-item"><%= facet.label %></div>
+
+<% _.forEach( facet.values, function ( value ) { %>
+    <div class="facet-value">
+        <div class="cb-ctr">
+            <div class="cb"></div>
+            <div class="cb-label"><%= value.label %></div>
+        </div>
+    </div>
+<% } ) %>
