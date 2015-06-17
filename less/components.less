@@ -1,0 +1,29 @@
+// Checkbox
+
+.cb-ctr:hover {
+  cursor: pointer;
+
+  .cb {
+    opacity: .8;
+    .box-shadow( inset 0 1px 1px #eee );
+  }
+}
+
+.cb {
+  border: 1px solid #999;
+  height: 14px;
+  opacity: .5;
+  width: 14px;
+  .transition( box-shadow )
+}
+
+.cb,
+.cb-label {
+  display: inline-block;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+.cb-label {
+  text-transform: capitalize;
+}
