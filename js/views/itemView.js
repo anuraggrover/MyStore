@@ -6,11 +6,37 @@
     'use strict';
 
     define( [
+        'jquery',
         'underscore',
         'views/baseView',
         'text!templates/itemTemplate.html'
-    ], function ( _, BaseView, itemTemplate ) {
-        var ItemView;
+    ], function ( $, _, BaseView, itemTemplate ) {
+        var ItemView,
+
+            toggleGallery = function () {
+                var that = this;
+
+                that.$el.toggleClass( 'inverted' );
+
+                if ( that.$( '.gallery-item.active').length === 0 ) {
+                    that.$( '.gallery-item').first().addClass( 'active' );
+                }
+            },
+
+            handleAction = function ( e ) {
+                var that = this,
+                    jTarget = $( e.currentTarget),
+                    action = jTarget.attr( 'data-action' );
+
+                switch ( action ) {
+                    case 'add-to-cart':
+                        break;
+
+                    case 'toggle-gallery':
+                        toggleGallery.call( that );
+                        break;
+                }
+            };
 
         itemTemplate = _.template( itemTemplate );
 
@@ -18,10 +44,17 @@
             tagName: 'article',
             className: 'ms-item',
 
+            events: {
+                'click [data-action]': handleAction
+            },
+
             render: function () {
                 var that = this;
 
-                that.$el.html( itemTemplate( that.model.attributes ) );
+                that.$el.html( itemTemplate( {
+                    item:       that.model.attributes,
+                    galleryId: _.uniqueId( 'gallery-id-' )
+                } ) );
 
                 return that;
             }
