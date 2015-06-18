@@ -146,10 +146,17 @@
   right: 0;
   top: 0;
   .rotateY(180deg);
+
+  &:hover {
+    .slide-control {
+      background-color: #fff;
+      .rotateY(0deg);
+    }
+  }
 }
 
 .slide-control {
-  background-color: #fff;
+  background-color: #ccc;
   color: rgba(95, 247, 210, 0.5);
   font-size: 40px;
   margin-top: -28px;
@@ -157,6 +164,8 @@
   position: absolute;
   top: 50%;
   text-decoration: none !important;
+  .rotateY(90 deg);
+  .transition( background-color .1s linear, transform .1s linear; );
 
   &:hover {
     color: rgba(95, 247, 210, 0.7);
@@ -170,8 +179,12 @@
 
 .slide-control-left {
   left: 0;
+  .rotateY(90deg);
+  .transform-origin(0% 0%);
 }
 
 .slide-control-right {
   right: 0;
+  .rotateY(-90deg);
+  .transform-origin(100% 100%);
 }

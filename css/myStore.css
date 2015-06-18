@@ -6774,8 +6774,15 @@ button.close {
   -o-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
-.slide-control {
+.back:hover .slide-control {
   background-color: #fff;
+  -webkit-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}
+.slide-control {
+  background-color: #ccc;
   color: rgba(95, 247, 210, 0.5);
   font-size: 40px;
   margin-top: -28px;
@@ -6783,6 +6790,13 @@ button.close {
   position: absolute;
   top: 50%;
   text-decoration: none !important;
+  -webkit-transform: rotateY(90 deg);
+  -ms-transform: rotateY(90 deg);
+  -o-transform: rotateY(90 deg);
+  transform: rotateY(90 deg);
+  -webkit-transition: background-color 0.1s linear, transform 0.1s linear;
+  -o-transition: background-color 0.1s linear, transform 0.1s linear;
+  transition: background-color 0.1s linear, transform 0.1s linear;
 }
 .slide-control:hover {
   color: rgba(95, 247, 210, 0.7);
@@ -6794,9 +6808,25 @@ button.close {
 }
 .slide-control-left {
   left: 0;
+  -webkit-transform: rotateY(90deg);
+  -ms-transform: rotateY(90deg);
+  -o-transform: rotateY(90deg);
+  transform: rotateY(90deg);
+  -webkit-transform-origin: 0% 0%;
+  -moz-transform-origin: 0% 0%;
+  -ms-transform-origin: 0% 0%;
+  transform-origin: 0% 0%;
 }
 .slide-control-right {
   right: 0;
+  -webkit-transform: rotateY(-90deg);
+  -ms-transform: rotateY(-90deg);
+  -o-transform: rotateY(-90deg);
+  transform: rotateY(-90deg);
+  -webkit-transform-origin: 100% 100%;
+  -moz-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
 }
 body {
   color: #555;
