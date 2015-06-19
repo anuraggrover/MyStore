@@ -9,8 +9,9 @@
         'jquery',
         'underscore',
         'views/baseView',
-        'text!templates/itemTemplate.html'
-    ], function ( $, _, BaseView, itemTemplate ) {
+        'text!templates/itemTemplate.html',
+        'text!templates/addingToCartAnimation.html'
+    ], function ( $, _, BaseView, itemTemplate, addingToCartStyles ) {
         var ItemView,
 
             toggleGallery = function () {
@@ -23,6 +24,25 @@
                 }
             },
 
+            addToCart = function () {
+                var that = this,
+                    model = that.model,
+                    image = model.get( 'images' )[0],
+                    clonedImg, imagePosition, jStyle;
+
+                imagePosition = that.$el.offset();
+                jStyle = $( '<style></style>').html( addingToCartStyles( imagePosition )).appendTo( document.body );
+
+                clonedImg = $( '<img class="cloned-img"/> ')
+                    .attr( 'src', image)
+                    .appendTo(
+                        $( '#cloned-img-ctr').css( imagePosition).addClass( 'adding-to-cart ').on( 'animationEnd webkitAnimationEnd MSAnimationEnd', function () {
+                            clonedImg.remove();
+                            jStyle.remove();
+                        } )
+                    );
+            },
+
             handleAction = function ( e ) {
                 var that = this,
                     jTarget = $( e.currentTarget),
@@ -30,6 +50,7 @@
 
                 switch ( action ) {
                     case 'add-to-cart':
+                        addToCart.call( that );
                         break;
 
                     case 'toggle-gallery':
@@ -39,6 +60,7 @@
             };
 
         itemTemplate = _.template( itemTemplate );
+        addingToCartStyles = _.template( addingToCartStyles );
 
         ItemView = BaseView.extend( {
             tagName: 'article',
