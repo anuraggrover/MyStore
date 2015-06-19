@@ -21,8 +21,12 @@
                         model: model
                     } );
 
-                that.$( '.cart-items' ).append( cartItemView.render().el );
+                that.$( '.cart-items' ).append( cartItemView.render().$el.addClass( 'new' ) );
                 that.$( '.cart-items-ctr' ).removeClass( 'empty' );
+
+                _.delay( function () {
+                    cartItemView.$el.removeClass( 'new' );
+                }, 250 );
             },
 
             removeCartItem = function () {

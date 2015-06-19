@@ -6904,8 +6904,13 @@ body {
   animation-timing-function: ease-in;
 }
 .cart-item {
-  padding: 5px 0;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
   position: relative;
+  -webkit-transition: background-color 0.3s ease-out;
+  -o-transition: background-color 0.3s ease-out;
+  transition: background-color 0.3s ease-out;
 }
 .cart-item .icn-close {
   top: -10px;
@@ -6917,6 +6922,9 @@ body {
 }
 .cart-item:hover .icn-close {
   opacity: .5;
+}
+.cart-item.new {
+  background-color: rgba(234, 232, 59, 0.25);
 }
 .cart-item-preview {
   border: 1px solid #ddd;
