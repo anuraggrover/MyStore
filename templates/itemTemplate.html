@@ -5,9 +5,12 @@
     </div>
 
     <div class="item-info">
-        <div class="item-info-row">
-            <div class="item-name item-info-label"><%= item.label %></div>
-            <div class="item-desc"><%= item.desc %></div>
+        <div class="item-info-row clearfix">
+            <div class="pull-left">
+                <div class="item-name item-info-label"><%= item.label %></div>
+                <div class="item-desc"><%= item.desc %></div>
+            </div>
+            <div class="pull-right item-price"><%= item.price %></div>
         </div>
 
         <div class="item-info-row">
@@ -43,5 +46,5 @@
         <a class="slide-control slide-control-right" href="#<%= galleryId %>" data-slide="next">&gt;</a>
 
     </div>
-    <div class="pull-right icn-close" data-action="toggle-gallery">&times;</div>
+    <div class="icn-close" data-action="toggle-gallery">&times;</div>
 </div>

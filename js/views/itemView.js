@@ -8,10 +8,11 @@
     define( [
         'jquery',
         'underscore',
+        'backbone',
         'views/baseView',
         'text!templates/itemTemplate.html',
         'text!templates/addingToCartAnimation.html'
-    ], function ( $, _, BaseView, itemTemplate, addingToCartStyles ) {
+    ], function ( $, _, Backbone, BaseView, itemTemplate, addingToCartStyles ) {
         var ItemView,
 
             toggleGallery = function () {
@@ -28,6 +29,7 @@
                 var that = this,
                     model = that.model,
                     image = model.get( 'images' )[0],
+                    jClonedImgCtr = $( '<div id="cloned-img-ctr" class="adding-to-cart"></div>'),
                     clonedImg, imagePosition, jStyle;
 
                 imagePosition = that.$el.offset();
@@ -36,11 +38,14 @@
                 clonedImg = $( '<img class="cloned-img"/> ')
                     .attr( 'src', image)
                     .appendTo(
-                        $( '#cloned-img-ctr').css( imagePosition).addClass( 'adding-to-cart ').on( 'animationEnd webkitAnimationEnd MSAnimationEnd', function () {
-                            clonedImg.remove();
-                            jStyle.remove();
-                        } )
-                    );
+                    jClonedImgCtr.appendTo( '.ms-container' ).on( 'animationEnd ' +
+                        'webkitAnimationEnd MSAnimationEnd', function () {
+                        clonedImg.remove();
+                        jClonedImgCtr.remove();
+                        jStyle.remove();
+
+                        Backbone.Notifications.trigger( 'item:added', that.model );
+                    } ) );
             },
 
             handleAction = function ( e ) {

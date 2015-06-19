@@ -4,7 +4,7 @@
 
 ( function () {
     require( [ 'config' ], function () {
-        require( [ 'bootstrap' ], function () {
+        require( [ 'bootstrap', 'eventsApi' ], function () {
             require( [
                 'models/cartModel',
                 'views/topNav',
