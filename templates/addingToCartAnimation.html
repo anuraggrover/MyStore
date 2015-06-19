@@ -1,7 +1,7 @@
 <% _.forEach( ['webkit', 'moz', 'o'], function (prefix) { %>
     @-<%= prefix %>-keyframes adding-to-cart {
         0% {
-            -webkit-transform: scale(1);
+            -<%= prefix %>-transform: scale(1);
             left: <%= left %>px;
             top: <%= top %>px;
         }
@@ -22,7 +22,7 @@
         }
 
         100% {
-            -webkit-transform: scale(.1);
+            -<%= prefix %>-transform: scale(.1);
             left: -10px;
             top: -120px;
         }

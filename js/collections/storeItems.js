@@ -17,7 +17,7 @@
                 ],
                 label: 'fluted hem dress',
                 desc: 'summer dress',
-                price: '39$',
+                price: '$39',
                 sizes: [ 's', 'm', 'l', 'xl' ],
                 colors: [ 'blue', 'red', 'white', 'green' ]
             }, {
@@ -28,7 +28,7 @@
                 ],
                 label: 'pleat printed dress',
                 desc: 'summer dress',
-                price: '39$',
+                price: '$39',
                 sizes: [ 's', 'm', 'l', 'xl' ],
                 colors: [ 'blue', 'red', 'white', 'green' ]
             }, {
@@ -39,7 +39,7 @@
                 ],
                 label: 'flowy shirt dress',
                 desc: 'summer dress',
-                price: '39$',
+                price: '$39',
                 sizes: [ 's', 'm', 'l', 'xl' ],
                 colors: [ 'blue', 'red', 'white', 'green' ]
             } ];

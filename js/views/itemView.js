@@ -38,7 +38,7 @@
                 clonedImg = $( '<img class="cloned-img"/> ')
                     .attr( 'src', image)
                     .appendTo(
-                    jClonedImgCtr.appendTo( '.ms-container' ).on( 'animationEnd ' +
+                    jClonedImgCtr.appendTo( '.ms-container' ).on( 'animationend ' +
                         'webkitAnimationEnd MSAnimationEnd', function () {
                         clonedImg.remove();
                         jClonedImgCtr.remove();
